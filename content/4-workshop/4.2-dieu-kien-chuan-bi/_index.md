@@ -31,12 +31,12 @@ For the Web interface (running on the user's browser) to securely connect to the
 3. Switch to the **Security credentials** tab.
 4. Scroll down to the **Access keys** section and click the **Create access key** button.
 5. Download the CSV file or carefully copy the 2 strings: `Access key ID` and `Secret access key`.
-![Create Access Key](/images/4/image2.png)
+![Create Access Key](/Workshop/images/4/image2.png)
 
 **Step 3: Integrate the security keys into the source code**
 1. Open the `index.html` file using Visual Studio Code.
 2. Locate the AWS SDK configuration code block (in the `<script>` section) and enter the 2 Key values obtained in Step 2 into the correct positions.
-![Configuration](/images/4/image3.png)
+![Configuration](/Workshop/images/4/image3.png)
 3. **Checkpoint:** Successfully save the `index.html` file. At this point, the source code is ready to connect to the cloud infrastructure.
 
 ## 3. Expected Outcomes

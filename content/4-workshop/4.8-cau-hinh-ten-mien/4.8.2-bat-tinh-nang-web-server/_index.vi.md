@@ -11,14 +11,14 @@ Mặc dù đã tắt "Block Public Access", AWS S3 vẫn mặc định cấm ng�
 
 1. Chuyển sang thẻ **Permissions** (Quyền).
 
-![alt text](/images/4/4.8/image5.png)
+![alt text](/Workshop/images/4/4.8/image5.png)
 
 2. Cuộn xuống mục **Bucket policy**, bấm **Edit**.
 
 3. Dán đoạn mã JSON phân quyền công khai cho phép đọc dữ liệu vào khung soạn thảo.
-![alt text](/images/4/4.8/image6.png)
+![alt text](/Workshop/images/4/4.8/image6.png)
 
 4. Bấm **Save changes** (Lưu thay đổi).
 
 
-![alt text](/images/4/4.8/image7.png)
+![alt text](/Workshop/images/4/4.8/image7.png)

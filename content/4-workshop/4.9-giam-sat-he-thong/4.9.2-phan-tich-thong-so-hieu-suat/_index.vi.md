@@ -18,8 +18,8 @@ Hãy chú ý vào dòng chữ bắt đầu bằng chữ `REPORT` và phân tích
 
 1. **Duration (Thời gian thực thi):** 
    * *Đánh giá:* Thời gian này thấp hơn rất nhiều so với giới hạn Timeout: 15.00 seconds mà chúng ta đã thiết lập ở cấu hình Lambda. Nghĩa là hệ thống chạy an toàn, không bị ép ngắt giữa chừng.
-   ![alt text](/images/4/4.9/image3.png)
+   ![alt text](/Workshop/images/4/4.9/image3.png)
 2. **Max Memory Used (Bộ nhớ tối đa đã dùng):** 
    * *Đánh giá:* Mặc định Lambda chỉ cho 128 MB. Nếu chúng ta không chủ động tăng Memory Size lên 512 MB ở chương trước, hàm này chắc chắn đã bị Crash (sập) vì tràn RAM do thư viện Pillow nén ảnh tốn khá nhiều bộ nhớ.
 
-![alt text](/images/4/4.9/image4.png)
+![alt text](/Workshop/images/4/4.9/image4.png)

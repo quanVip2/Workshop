@@ -26,7 +26,7 @@ chapter: false
 
 **Thời gian thực tập:** Từ ngày 01-08-2026 đến ngày 27-06-2026
 
-![Ảnh đại diện Nguyễn Hông Quân](/images/anhdaidien.jpg)
+![Ảnh đại diện Nguyễn Hông Quân](/Workshop/images/anhdaidien.jpg)
 
 ## Nội dung báo cáo
 

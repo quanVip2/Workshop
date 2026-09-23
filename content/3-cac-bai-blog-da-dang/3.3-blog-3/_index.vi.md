@@ -16,7 +16,7 @@ Việc xây dựng các trợ lý trí tuệ nhân tạo (AI Agents) tinh vi th�
 * **Tối ưu hóa vận hành và Bảo mật:** Loại bỏ hoàn toàn gánh nặng quản lý máy chủ (Serverless AI). Dữ liệu khách hàng và dữ liệu huấn luyện được giữ an toàn trong môi trường VPC, tuân thủ các tiêu chuẩn bảo mật khắt khe của AWS.
 * **Góc nhìn thực tiễn cho Khoa học Máy tính:** Quá trình chuyển đổi này cung cấp bài học quan trọng về thiết kế kiến trúc phần mềm tích hợp AI (AI-integrated Software Architecture). Nó minh họa xu hướng dịch chuyển từ việc phát triển mô hình cục bộ sang tận dụng các nền tảng quản lý MLOps/LLMOps trên đám mây để mở rộng quy mô.
 
-![Kiến trúc Amazon Bedrock Agents](/images/baiblog3.3.png)
+![Kiến trúc Amazon Bedrock Agents](/Workshop/images/baiblog3.3.png)
 
 * **Link bài viết:** ([Blog cá nhân](https://lnkd.in/p/dcQ8E83M))
 * **Link tham khảo:** [AWS Blog - Migrating multi-model AI agents to Amazon Bedrock Agent/Core Runtime](https://aws.amazon.com/blogs/machine-learning/migrating-multi-model-ai-agents-to-amazon-bedrock-agentcore-runtime/)

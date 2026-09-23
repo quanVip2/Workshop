@@ -31,12 +31,12 @@ Bạn chỉ cần chuẩn bị:
 3. Chuyển sang thẻ **Security credentials** (Thông tin xác thực bảo mật).
 4. Kéo xuống phần **Access keys**, nhấn nút **Create access key**.
 5. Bấm tải về file CSV hoặc sao chép cẩn thận 2 chuỗi ký tự: `Access key ID` và `Secret access key`.
-![Tạo Access Key](/images/4/4.2/image2.png)
+![Tạo Access Key](/Workshop/images/4/4.2/image2.png)
 
 **Bước 3: Tích hợp khóa bảo mật vào mã nguồn**
 1. Mở file `index.html` bằng Visual Studio Code.
 2. Tìm đến khối mã cấu hình AWS SDK (ở phần `<script>`) và điền 2 giá trị Key vừa lấy được ở Bước 2 vào đúng vị trí.
- ![cấu hình](/images/4/4.2/image3.png)
+ ![cấu hình](/Workshop/images/4/4.2/image3.png)
 3. **Checkpoint:** Lưu file `index.html` thành công. Lúc này file mã nguồn đã sẵn sàng kết nối với hạ tầng đám mây.
 
 ## 3. Kết quả mong đợi

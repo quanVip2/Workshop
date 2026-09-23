@@ -14,4 +14,4 @@ pre: " <b> 4.7.2 </b> "
 3. Nhìn vào phần **Function overview** (Sơ đồ tổng quan chức năng) ở ngay trên cùng.
 4. Nếu kết nối thành công, bạn sẽ thấy biểu tượng **Amazon S3** xuất hiện ở bên trái (đóng vai trò Trigger), chỉ mũi tên vào hàm Lambda ở giữa.
 
-![alt text](/images/4/4.7/image7.png)
+![alt text](/Workshop/images/4/4.7/image7.png)

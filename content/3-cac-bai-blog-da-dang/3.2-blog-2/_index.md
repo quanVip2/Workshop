@@ -16,7 +16,7 @@ Observability is a vital factor in maintaining reliability within distributed sy
 * **Request Flow visualization:** Allows DevOps engineers to easily track the entire lifecycle of a request as it passes through multiple independent services (microservices), thereby accurately identifying performance bottlenecks.
 * **Practical perspective for Computer Science:** This is a perfect demonstration of applying distributed system operation principles and automation practices (CI/CD/Infrastructure as Code), helping to reduce the Mean Time To Recovery (MTTR).
 
-![Architecture diagram](/images/anhblog3.2.jpg)
+![Architecture diagram](/Workshop/images/anhblog3.2.jpg)
 
 * **Link bài viết:** ([Blog cá nhân](https://lnkd.in/p/dtS99CXi))
 

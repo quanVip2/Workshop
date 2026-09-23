@@ -16,7 +16,7 @@ Building sophisticated Artificial Intelligence assistants (AI Agents) often requ
 * **Operational Optimization and Security:** Completely eliminates the server management burden (Serverless AI). Customer and training data are kept secure within a VPC environment, complying with AWS's strict security standards.
 * **Practical perspective for Computer Science:** This migration process provides an important lesson on AI-integrated Software Architecture design. It illustrates the shift from developing local models to leveraging managed MLOps/LLMOps platforms on the cloud for scalability.
 
-![Amazon Bedrock Agents Architecture](/images/anhblog3.3.jpg)
+![Amazon Bedrock Agents Architecture](/Workshop/images/anhblog3.3.jpg)
 
 * **Article link:** Personal Blog
 * **Reference link:** [AWS Blog - Migrating multi-model AI agents to Amazon Bedrock Agent/Core Runtime](https://aws.amazon.com/blogs/machine-learning/migrating-multi-model-ai-agents-to-amazon-bedrock-agentcore-runtime/)

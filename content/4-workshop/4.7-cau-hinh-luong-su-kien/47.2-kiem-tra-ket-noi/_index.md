@@ -14,4 +14,4 @@ To ensure that the integration between Storage (S3) and Compute (Lambda) has bee
 3. Look at the **Function overview** section at the very top.
 4. If the connection is successful, you will see the **Amazon S3** icon appear on the left (acting as a Trigger), with an arrow pointing to the Lambda function in the middle.
 
-![alt text](/images/4/4.7/image7.png)
+![alt text](/Workshop/images/4/4.7/image7.png)

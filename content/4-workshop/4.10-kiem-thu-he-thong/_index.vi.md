@@ -22,51 +22,51 @@ Khi một trình duyệt truy cập Web, nó tự động sinh ra một mã số
 ## Các bước kiểm thử chi tiết
 
 ### Bước 1: Trải nghiệm trên thiết bị thứ nhất (Ví dụ: Google Chrome)
-1. Mở đường link Static Website S3 bằng trình duyệt Google Chrome.
+1. Mở đường link Static Website S3 bằng trình duyệt Google Chrome.:http://trang-web-xu-ly-anh-cua-toi.s3-website-us-east-1.amazonaws.com/
 
-![alt text](/images/4/4.10/image1.png)
+![alt text](/Workshop/images/4/4.10/image1.png)
 
 2. Nhấn vào khu vực tải ảnh, chọn một tấm ảnh dung lượng lớn từ máy tính.
 
-![alt text](/images/4/4.10/image2.png)
+![alt text](/Workshop/images/4/4.10/image2.png)
 
 3. Nhấn **TẢI ẢNH LÊN HỆ THỐNG**.
 
-![alt text](/images/4/4.10/image3.png)
+![alt text](/Workshop/images/4/4.10/image3.png)
 
 4. Quan sát dòng trạng thái: Chuyển từ *"Đang đẩy ảnh lên kho S3 gốc..."* sang *"Đang chờ hệ thống nén ảnh (8s)..."* và cuối cùng là *"Hoàn tất!"*.
 
-![alt text](/images/4/4.10/image4.png)
+![alt text](/Workshop/images/4/4.10/image4.png)
 
 5. Bức ảnh thu nhỏ hiện ra, bạn nhấn **Mở / Tải ảnh này xuống** để kiểm tra chất lượng và xem dung lượng thực tế đã được giảm đi bao nhiêu so với ảnh 
 gốc.
 
-![alt text](/images/4/4.10/image5.png)
+![alt text](/Workshop/images/4/4.10/image5.png)
 
 6. Kéo xuống phần Lịch sử Dữ liệu, bạn sẽ thấy thông tin bức ảnh vừa tải (Đã được cắt bỏ tiền tố định danh để giao diện hiển thị tên gốc đẹp mắt).
 
-![alt text](/images/4/4.10/image6.png)
+![alt text](/Workshop/images/4/4.10/image6.png)
 
 ### Bước 2: Kiểm chứng không gian độc lập trên thiết bị thứ hai (Ví dụ: Cốc Cốc)
 1. Giữ nguyên trang web bên Chrome, bạn mở thêm trình duyệt Cốc Cốc (hoặc mở Tab Ẩn danh).
 2. Dán đường link website vào Cốc Cốc.
 3. Kéo xuống phần Lịch sử Dữ liệu, bạn sẽ thấy dòng chữ: *"Bạn chưa tải lên tấm ảnh nào"*. Mặc dù bạn vừa tải ảnh bên Chrome, nhưng Cốc Cốc hoàn toàn không nhìn thấy nhờ cơ chế định danh LocalStorage.
 
-![alt text](/images/4/4.10/image7.png)
+![alt text](/Workshop/images/4/4.10/image7.png)
 
 4. Thử tải một bức ảnh khác (Ví dụ: Ảnh B) trên Cốc Cốc. Lúc này lịch sử bên Cốc Cốc hiện Ảnh B, còn lịch sử bên Chrome (sau khi bấm nút Làm mới) vẫn chỉ hiện Ảnh A. 
    
-![alt text](/images/4/4.10/image8.png)
+![alt text](/Workshop/images/4/4.10/image8.png)
 
 $$\rightarrow \text{Tính năng Multi-user hoạt động thành công xuất sắc!}$$
 
 ### Bước 3: Kiểm thử tính năng Xóa
 1. Quay lại Chrome, bấm nút 🗑️ **Xóa** ở bức ảnh trong bảng lịch sử.
 2. Một bảng xác nhận hiện lên, chọn **OK**.
-![alt text](/images/4/4.10/image9.png)
+![alt text](/Workshop/images/4/4.10/image9.png)
 3. Giao diện tự động tải lại và bức ảnh biến mất khỏi lịch sử (Lệnh `deleteItem` của DynamoDB đã được thực thi).
 
-![alt text](/images/4/4.10/image10.png)
+![alt text](/Workshop/images/4/4.10/image10.png)
 
 # CÁC DỊCH VỤ AWS ĐƯỢC SỬ DỤNG
 

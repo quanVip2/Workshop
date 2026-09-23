@@ -26,7 +26,7 @@ chapter: false
 
 **Internship Duration:** From 01-08-2026 to 27-06-2026
 
-![Nguyen Hong Quan Avatar](/images/anhdaidien.jpg)
+![Nguyen Hong Quan Avatar](/Workshop/images/anhdaidien.jpg)
 
 ## Report Content
 

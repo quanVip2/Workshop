@@ -32,7 +32,7 @@ pre: " <b> 2. </b> "
 ## 3. Architecture & Technical Design
 
 ## Architecture Diagram
-![Sơ đồ kiến trúc Hệ thống Tự động xử lý hình ảnh Serverless](/images/sodo.jpg)
+![Sơ đồ kiến trúc Hệ thống Tự động xử lý hình ảnh Serverless](/Workshop/images/sodo.jpg)
 
 ### 3.1. AWS Services Selection
 * **Amazon S3 (Simple Storage Service):** Used for file storage (divided into Input Bucket and Output Bucket) with high durability, low cost, and event notification support.

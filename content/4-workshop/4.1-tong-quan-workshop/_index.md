@@ -25,7 +25,7 @@ The system architecture includes the following main components:
 * Identity and Access Management
 * System Monitoring
 
-![Figure 1 – Automated Image Processing System Architecture](/images/architecture-diagram.png)
+![Figure 1 – Automated Image Processing System Architecture](/Workshop/images/architecture-diagram.png)
 *Figure 1 – Automated Image Processing System Architecture (Note: Ensure you have saved the architecture diagram image in the `/images/architecture-diagram.png` folder)*
 
 ## 3. System Workflow

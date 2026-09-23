@@ -12,7 +12,7 @@ pre: " <b> 4.6.1 </b> "
 * Click the orange **Create function** button.
 * Select the **Author from scratch** option.
 
-![alt text](/images/4/4.5/image1.png)
+![alt text](/Workshop/images/4/4.5/image1.png)
 
 **Step 2: Configure Basic Parameters**
 
@@ -20,7 +20,7 @@ pre: " <b> 4.6.1 </b> "
 * **Runtime:** Select **Python 3.12** *(Note: You must select the correct version to ensure compatibility with the Pillow Layer in the next step)*.
 * **Architecture:** Keep the default `x86_64`.
 
-![alt text](/images/4/4.5/image2.png)
+![alt text](/Workshop/images/4/4.5/image2.png)
 
 **Step 3: Attach IAM Permissions (Execution Role)**
 
@@ -28,8 +28,8 @@ pre: " <b> 4.6.1 </b> "
 * Select **Choose an existing role**.
 * In the dropdown or search box below, select the IAM Role you created in the previous section, and click save.
 
-![alt text](/images/4/4.5/image3.png)
+![alt text](/Workshop/images/4/4.5/image3.png)
 
 * Scroll down and click **Create function** for the system to initialize the virtual server.
 
-![alt text](/images/4/4.5/image4.png)
+![alt text](/Workshop/images/4/4.5/image4.png)

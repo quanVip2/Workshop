@@ -15,21 +15,21 @@
     <title>Resource Clean-up :: AWS Workshop</title>
 
     
-    <link href="/Workshop/css/nucleus.css?1790168098" rel="stylesheet">
-    <link href="/Workshop/css/fontawesome-all.min.css?1790168098" rel="stylesheet">
-    <link href="/Workshop/css/hybrid.css?1790168098" rel="stylesheet">
-    <link href="/Workshop/css/featherlight.min.css?1790168098" rel="stylesheet">
-    <link href="/Workshop/css/perfect-scrollbar.min.css?1790168098" rel="stylesheet">
-    <link href="/Workshop/css/auto-complete.css?1790168098" rel="stylesheet">
-    <link href="/Workshop/css/atom-one-dark-reasonable.css?1790168098" rel="stylesheet">
-    <link href="/Workshop/css/theme.css?1790168098" rel="stylesheet">
-    <link href="/Workshop/css/hugo-theme.css?1790168098" rel="stylesheet">
+    <link href="/Workshop/css/nucleus.css?1790169817" rel="stylesheet">
+    <link href="/Workshop/css/fontawesome-all.min.css?1790169817" rel="stylesheet">
+    <link href="/Workshop/css/hybrid.css?1790169817" rel="stylesheet">
+    <link href="/Workshop/css/featherlight.min.css?1790169817" rel="stylesheet">
+    <link href="/Workshop/css/perfect-scrollbar.min.css?1790169817" rel="stylesheet">
+    <link href="/Workshop/css/auto-complete.css?1790169817" rel="stylesheet">
+    <link href="/Workshop/css/atom-one-dark-reasonable.css?1790169817" rel="stylesheet">
+    <link href="/Workshop/css/theme.css?1790169817" rel="stylesheet">
+    <link href="/Workshop/css/hugo-theme.css?1790169817" rel="stylesheet">
     
-    <link href="/Workshop/css/theme-workshop.css?1790168098" rel="stylesheet">
+    <link href="/Workshop/css/theme-workshop.css?1790169817" rel="stylesheet">
     
     
 
-    <script src="/Workshop/js/jquery-3.3.1.min.js?1790168098"></script>
+    <script src="/Workshop/js/jquery-3.3.1.min.js?1790169817"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -58,8 +58,8 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/Workshop/js/lunr.min.js?1790168098"></script>
-<script type="text/javascript" src="/Workshop/js/auto-complete.js?1790168098"></script>
+<script type="text/javascript" src="/Workshop/js/lunr.min.js?1790169817"></script>
+<script type="text/javascript" src="/Workshop/js/auto-complete.js?1790169817"></script>
 
 
     
@@ -67,7 +67,7 @@
 <script type="text/javascript">
     var baseurl = "http:\/\/localhost:1313\/Workshop\/\/";
 </script>
-<script type="text/javascript" src="/Workshop/js/search.js?1790168098"></script> 
+<script type="text/javascript" src="/Workshop/js/search.js?1790169817"></script> 
   </div>
 
   <div class="highlightable">
@@ -1069,47 +1069,47 @@
 <li>Access the S3 service, check the box to select the <code>kho-anh-goc-cua-toi-1</code> bucket.</li>
 <li>Click the <strong>Empty</strong> button on the top menu, type <code>permanently delete</code> to confirm the deletion of all original images inside.</li>
 </ol>
-<p><img src="/images/4/4.11/image1.png" alt="alt text"></p>
+<p><img src="/Workshop/images/4/4.11/image1.png" alt="alt text"></p>
 <ol start="3">
 <li>Return to the list, select the <code>kho-anh-goc-cua-toi-1</code> bucket again, click the <strong>Delete</strong> button, and type the bucket name to confirm permanently deleting the bucket.</li>
 </ol>
-<p><img src="/images/4/4.11/image2.png" alt="alt text"></p>
+<p><img src="/Workshop/images/4/4.11/image2.png" alt="alt text"></p>
 <ol start="4">
 <li>Repeat the same Empty and Delete operations for the remaining 2 buckets: <code>kho-anh-nho-cua-toi-1</code> (Output Bucket) and <code>trang-web-xu-ly-anh-cua-toi</code> (Static Website Bucket).</li>
 </ol>
-<p><img src="/images/4/4.11/image3.png" alt="alt text"></p>
+<p><img src="/Workshop/images/4/4.11/image3.png" alt="alt text"></p>
 <h3 id="step-2-delete-amazon-dynamodb-database-table">Step 2: Delete Amazon DynamoDB Database Table</h3>
 <ol>
 <li>Access the DynamoDB service, select <strong>Tables</strong> on the left menu.</li>
 <li>Check the box for the <code>ThongTinAnh</code> table.</li>
 <li>Click the <strong>Delete</strong> button, type <code>confirm</code> to confirm the deletion of all historical metadata.</li>
 </ol>
-<p><img src="/images/4/4.11/image4.png" alt="alt text"></p>
+<p><img src="/Workshop/images/4/4.11/image4.png" alt="alt text"></p>
 <h3 id="step-3-delete-aws-lambda-processing-function">Step 3: Delete AWS Lambda Processing Function</h3>
 <ol>
 <li>Access the Lambda service, select the <strong>Functions</strong> tab.</li>
 <li>Check the box for the <code>HamXuLyAnh12</code> function.</li>
 <li>Click <strong>Actions</strong> $\rightarrow$ Select <strong>Delete</strong>, type <code>delete</code> to confirm deleting the Python source code.</li>
 </ol>
-<p><img src="/images/4/4.11/image5.png" alt="alt text">
-<img src="/images/4/4.11/image6.png" alt="alt text"></p>
+<p><img src="/Workshop/images/4/4.11/image5.png" alt="alt text">
+<img src="/Workshop/images/4/4.11/image6.png" alt="alt text"></p>
 <h3 id="step-4-delete-amazon-cloudwatch-logs">Step 4: Delete Amazon CloudWatch Logs</h3>
 <ol>
 <li>Access the CloudWatch service, find the <strong>Logs</strong> $\rightarrow$ <strong>Log Management</strong> section on the left menu.</li>
 <li>Find and check the log group named <code>/aws/lambda/HamXuLyAnh12</code> (or equivalent).</li>
 <li>Click <strong>Actions</strong> $\rightarrow$ <strong>Delete log group</strong> and confirm.</li>
 </ol>
-<p><img src="/images/4/4.11/image7.png" alt="alt text"></p>
+<p><img src="/Workshop/images/4/4.11/image7.png" alt="alt text"></p>
 <h3 id="step-5-delete-aws-iam-security-identities">Step 5: Delete AWS IAM Security Identities</h3>
 <ol>
 <li>Access the IAM service, go to the <strong>Roles</strong> section.</li>
 <li>Find the &ldquo;Employee ID card&rdquo; <code>RoleChoLambda</code>, check the box and click <strong>Delete</strong>.</li>
 </ol>
-<p><img src="/images/4/4.11/image8.png" alt="alt text"></p>
+<p><img src="/Workshop/images/4/4.11/image8.png" alt="alt text"></p>
 <ol start="3">
 <li>Switch to the <strong>Users</strong> section, select the IAM User account you created in Chapter 2, proceed to <strong>Deactivate</strong> the Access Key, delete the Key, and then delete this IAM User entirely.</li>
 </ol>
-<p><img src="/images/4/4.11/image9.png" alt="alt text"></p>
+<p><img src="/Workshop/images/4/4.11/image9.png" alt="alt text"></p>
 <h2 id="expected-outcomes">Expected Outcomes</h2>
 <ul>
 <li>All original images, compressed images, database history, and static web source code have been completely removed from the system.</li>
@@ -1874,19 +1874,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/Workshop/js/clipboard.min.js?1790168098"></script>
-    <script src="/Workshop/js/perfect-scrollbar.min.js?1790168098"></script>
-    <script src="/Workshop/js/perfect-scrollbar.jquery.min.js?1790168098"></script>
-    <script src="/Workshop/js/jquery.sticky.js?1790168098"></script>
-    <script src="/Workshop/js/featherlight.min.js?1790168098"></script>
-    <script src="/Workshop/js/highlight.pack.js?1790168098"></script>
+    <script src="/Workshop/js/clipboard.min.js?1790169817"></script>
+    <script src="/Workshop/js/perfect-scrollbar.min.js?1790169817"></script>
+    <script src="/Workshop/js/perfect-scrollbar.jquery.min.js?1790169817"></script>
+    <script src="/Workshop/js/jquery.sticky.js?1790169817"></script>
+    <script src="/Workshop/js/featherlight.min.js?1790169817"></script>
+    <script src="/Workshop/js/highlight.pack.js?1790169817"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/Workshop/js/modernizr.custom-3.6.0.js?1790168098"></script>
-    <script src="/Workshop/js/learn.js?1790168098"></script>
-    <script src="/Workshop/js/hugo-learn.js?1790168098"></script>
+    <script src="/Workshop/js/modernizr.custom-3.6.0.js?1790169817"></script>
+    <script src="/Workshop/js/learn.js?1790169817"></script>
+    <script src="/Workshop/js/hugo-learn.js?1790169817"></script>
 
-    <link href="/Workshop/mermaid/mermaid.css?1790168098" rel="stylesheet" />
-    <script src="/Workshop/mermaid/mermaid.js?1790168098"></script>
+    <link href="/Workshop/mermaid/mermaid.css?1790169817" rel="stylesheet" />
+    <script src="/Workshop/mermaid/mermaid.js?1790169817"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

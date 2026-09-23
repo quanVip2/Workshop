@@ -25,7 +25,7 @@ Kiến trúc của hệ thống bao gồm các thành phần chính sau:
 * Quản lý danh tính và quyền hạn
 * Giám sát hệ thống
 
-![Hình 1 – Kiến trúc hệ thống Xử lý ảnh tự động](/images/architecture-diagram.png)
+![Hình 1 – Kiến trúc hệ thống Xử lý ảnh tự động](/Workshop/images/architecture-diagram.png)
 *Hình 1 – Kiến trúc hệ thống Xử lý ảnh tự động (Lưu ý: Hãy đảm bảo bạn đã lưu ảnh sơ đồ kiến trúc vào thư mục `/images/architecture-diagram.png`)*
 
 ## 3. Quy trình hoạt động của hệ thống

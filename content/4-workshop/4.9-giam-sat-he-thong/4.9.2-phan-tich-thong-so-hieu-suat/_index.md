@@ -19,9 +19,9 @@ Focus on the line starting with `REPORT` and analyze the following 2 extremely i
 1. **Duration (Execution time):**
    * *Evaluation:* This time is much lower than the 15.00-second Timeout limit we set in the Lambda configuration. This means the system runs safely without being forcibly cut short halfway through.
 
-   ![alt text](/images/4/4.9/image3.png)
+   ![alt text](/Workshop/images/4/4.9/image3.png)
 
 2. **Max Memory Used:**
    * *Evaluation:* Lambda only allows 128 MB by default. If we had not proactively increased the Memory Size to 512 MB in the previous chapter, this function would definitely have crashed due to a RAM overflow since the Pillow library consumes quite a lot of memory for image compression.
 
-   ![alt text](/images/4/4.9/image4.png)
+   ![alt text](/Workshop/images/4/4.9/image4.png)

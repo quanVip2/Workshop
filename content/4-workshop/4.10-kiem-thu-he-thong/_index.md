@@ -24,27 +24,27 @@ When a browser accesses the website, it automatically generates a hidden identif
 ### Step 1: Experience on the First Device (e.g., Google Chrome)
 1. Open the S3 Static Website link using the Google Chrome browser.
 
-![alt text](/images/4/4.10/image1.png)
+![alt text](/Workshop/images/4/4.10/image1.png)
 
 2. Click on the image upload area, and select a large-sized image from your computer.
 
-![alt text](/images/4/4.10/image2.png)
+![alt text](/Workshop/images/4/4.10/image2.png)
 
 3. Click **UPLOAD IMAGE TO SYSTEM**.
 
-![alt text](/images/4/4.10/image3.png)
+![alt text](/Workshop/images/4/4.10/image3.png)
 
 4. Observe the status line: Changes from *"Uploading original image to S3 bucket..."* to *"Waiting for system to compress image (8s)..."* and finally *"Completed!"*.
 
-![alt text](/images/4/4.10/image4.png)
+![alt text](/Workshop/images/4/4.10/image4.png)
 
 5. The thumbnail appears. Click **Open / Download this image** to check the quality and see how much the actual file size has been reduced compared to the original image.
 
-![alt text](/images/4/4.10/image5.png)
+![alt text](/Workshop/images/4/4.10/image5.png)
 
 6. Scroll down to the Data History section; you will see the information of the recently uploaded image (the identification prefix has been stripped so the interface displays a clean original file name).
 
-![alt text](/images/4/4.10/image6.png)
+![alt text](/Workshop/images/4/4.10/image6.png)
 
 > 📸 *Photo Guide 1: Take a full-screen screenshot of the Chrome browser showing the history table with 1-2 images you just tested.*
 
@@ -53,11 +53,11 @@ When a browser accesses the website, it automatically generates a hidden identif
 2. Paste the website link into CoC CoC.
 3. Scroll down to the Data History section; you will see the message: *"You have not uploaded any images yet"*. Even though you just uploaded an image in Chrome, CoC CoC cannot see it thanks to the LocalStorage identification mechanism.
 
-![alt text](/images/4/4.10/image7.png)
+![alt text](/Workshop/images/4/4.10/image7.png)
 
 4. Try uploading a different image (e.g., Image B) on CoC CoC. At this point, the history in CoC CoC shows Image B, while the history in Chrome (after clicking Refresh) still shows only Image A. 
    
-![alt text](/images/4/4.10/image8.png)
+![alt text](/Workshop/images/4/4.10/image8.png)
 
 $$\rightarrow \text{The Multi-user feature works exceptionally well!}$$
 
@@ -67,11 +67,11 @@ $$\rightarrow \text{The Multi-user feature works exceptionally well!}$$
 1. Return to Chrome, and click the 🗑️ **Delete** button on an image in the history table.
 2. A confirmation dialog will appear, select **OK**.
 
-![alt text](/images/4/4.10/image9.png)
+![alt text](/Workshop/images/4/4.10/image9.png)
 
 3. The interface automatically reloads, and the image disappears from the history (DynamoDB's `deleteItem` command has been executed).
 
-![alt text](/images/4/4.10/image10.png)
+![alt text](/Workshop/images/4/4.10/image10.png)
 
 # AWS SERVICES USED
 

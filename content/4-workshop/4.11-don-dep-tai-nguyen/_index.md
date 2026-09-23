@@ -21,47 +21,47 @@ To ensure a smooth deletion process without being blocked by the system due to d
 1. Access the S3 service, check the box to select the `kho-anh-goc-cua-toi-1` bucket.
 2. Click the **Empty** button on the top menu, type `permanently delete` to confirm the deletion of all original images inside.
 
-![alt text](/images/4/4.11/image1.png)
+![alt text](/Workshop/images/4/4.11/image1.png)
 
 3. Return to the list, select the `kho-anh-goc-cua-toi-1` bucket again, click the **Delete** button, and type the bucket name to confirm permanently deleting the bucket.
 
-![alt text](/images/4/4.11/image2.png)
+![alt text](/Workshop/images/4/4.11/image2.png)
 
 4. Repeat the same Empty and Delete operations for the remaining 2 buckets: `kho-anh-nho-cua-toi-1` (Output Bucket) and `trang-web-xu-ly-anh-cua-toi` (Static Website Bucket).
 
-![alt text](/images/4/4.11/image3.png)
+![alt text](/Workshop/images/4/4.11/image3.png)
 
 ### Step 2: Delete Amazon DynamoDB Database Table
 1. Access the DynamoDB service, select **Tables** on the left menu.
 2. Check the box for the `ThongTinAnh` table.
 3. Click the **Delete** button, type `confirm` to confirm the deletion of all historical metadata.
 
-![alt text](/images/4/4.11/image4.png)
+![alt text](/Workshop/images/4/4.11/image4.png)
 
 ### Step 3: Delete AWS Lambda Processing Function
 1. Access the Lambda service, select the **Functions** tab.
 2. Check the box for the `HamXuLyAnh12` function.
 3. Click **Actions** $\rightarrow$ Select **Delete**, type `delete` to confirm deleting the Python source code.
 
-![alt text](/images/4/4.11/image5.png)
-![alt text](/images/4/4.11/image6.png)
+![alt text](/Workshop/images/4/4.11/image5.png)
+![alt text](/Workshop/images/4/4.11/image6.png)
 
 ### Step 4: Delete Amazon CloudWatch Logs
 1. Access the CloudWatch service, find the **Logs** $\rightarrow$ **Log Management** section on the left menu.
 2. Find and check the log group named `/aws/lambda/HamXuLyAnh12` (or equivalent).
 3. Click **Actions** $\rightarrow$ **Delete log group** and confirm.
 
-![alt text](/images/4/4.11/image7.png)
+![alt text](/Workshop/images/4/4.11/image7.png)
 
 ### Step 5: Delete AWS IAM Security Identities
 1. Access the IAM service, go to the **Roles** section.
 2. Find the "Employee ID card" `RoleChoLambda`, check the box and click **Delete**.
 
-![alt text](/images/4/4.11/image8.png)
+![alt text](/Workshop/images/4/4.11/image8.png)
 
 3. Switch to the **Users** section, select the IAM User account you created in Chapter 2, proceed to **Deactivate** the Access Key, delete the Key, and then delete this IAM User entirely.
 
-![alt text](/images/4/4.11/image9.png)
+![alt text](/Workshop/images/4/4.11/image9.png)
 
 ## Expected Outcomes
 * All original images, compressed images, database history, and static web source code have been completely removed from the system.

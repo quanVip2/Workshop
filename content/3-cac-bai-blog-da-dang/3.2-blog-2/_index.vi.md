@@ -16,7 +16,7 @@ Khả năng quan sát (Observability) là yếu tố sống còn để duy trì 
 * **Trực quan hóa luồng dữ liệu (Request Flow):** Cho phép các kỹ sư DevOps dễ dàng theo dõi toàn bộ vòng đời của một yêu cầu (request) khi nó đi qua nhiều dịch vụ độc lập (microservices), từ đó xác định chính xác nút thắt cổ chai (bottlenecks) về hiệu suất.
 * **Góc nhìn thực tiễn cho Khoa học Máy tính:** Đây là một minh chứng hoàn hảo về ứng dụng các nguyên lý vận hành hệ thống phân tán và thực hành tự động hóa (CI/CD/Infrastructure as Code), giúp rút ngắn thời gian phát hiện và khắc phục sự cố (MTTR - Mean Time To Recovery).
 
-![Sơ đồ kiến trúc ](/images/anhblog3.2.jpg)
+![Sơ đồ kiến trúc ](/Workshop/images/anhblog3.2.jpg)
 
 * **Link bài viết:** ([Blog cá nhân](https://lnkd.in/p/dtS99CXi))
 * **Link tham khảo:** [AWS Blog - Adding observability to .NET microservices on EKS with ADOT auto-instrumentation and Helm](https://aws.amazon.com/blogs/dotnet/adding-observability-to-net-microservices-on-eks-with-adot-auto-instrumentation-and-helm/)

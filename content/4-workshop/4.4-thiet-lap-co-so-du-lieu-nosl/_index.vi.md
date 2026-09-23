@@ -26,7 +26,7 @@ Trong kiến trúc Serverless, Amazon DynamoDB được lựa chọn thay thế 
    * **Table name (Tên bảng):** Nhập `ThongTinAnh`
    * **Partition key (Khóa phân vùng):** Nhập `TenHinhAnh`. Kế bên, giữ nguyên kiểu dữ liệu là **String**. *(Đây là khóa chính (Primary Key) dùng để phân biệt các bức ảnh và là điều kiện bắt buộc để giao diện Web có thể thực thi lệnh `deleteItem` xóa ảnh).*
    * **Sort key:** Để trống.
-![Ảnh](/images/4/4.3/image1.png)
+![Ảnh](/Workshop/images/4/4.3/image1.png)
 
 **Bước 3: Tối ưu hóa chi phí và Bảo mật cơ bản**
 1. Kéo xuống phần **Table settings** (Cài đặt bảng). Thay vì để Default, hãy chọn **Customize settings** (Tùy chỉnh cài đặt) để tối ưu chi phí cho đồ án.
@@ -34,7 +34,7 @@ Trong kiến trúc Serverless, Amazon DynamoDB được lựa chọn thay thế 
    * Chọn **On-demand** (Theo yêu cầu). Thiết lập này giúp bảng dữ liệu hoạt động đúng chuẩn Serverless: chỉ tính tiền khi có phát sinh lệnh đọc/ghi, giải quyết bài toán tối ưu chi phí (Cost optimization) cho hệ thống khi rảnh rỗi.
 3. Cuộn xuống dưới cùng và nhấn **Create table**.
 
-![alt text](/images/4/4.3/image2.png)
+![alt text](/Workshop/images/4/4.3/image2.png)
 
 **Bước 4: Kiểm thử trạng thái khởi tạo (Metric/Log Checkpoint)**
 Hệ thống AWS sẽ mất khoảng vài chục giây để cấp phát tài nguyên.

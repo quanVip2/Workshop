@@ -27,7 +27,7 @@ In a Serverless architecture, Amazon DynamoDB is chosen as an alternative to tra
    * **Partition key:** Enter `TenHinhAnh`. Next to it, keep the data type as **String**. *(This is the Primary Key used to distinguish images and is a mandatory condition for the Web interface to execute the `deleteItem` command to delete images).*
    * **Sort key:** Leave blank.
 
-![Image](/images/4/4.3/image1.png)
+![Image](/Workshop/images/4/4.3/image1.png)
 
 **Step 3: Cost Optimization and Basic Security**
 1. Scroll down to the **Table settings** section. Instead of leaving it as Default, select **Customize settings** to optimize costs for the project.
@@ -35,7 +35,7 @@ In a Serverless architecture, Amazon DynamoDB is chosen as an alternative to tra
    * Select **On-demand**. This setting helps the data table operate according to Serverless standards: charging only when read/write requests occur, solving the cost optimization problem for the system when idle.
 3. Scroll to the bottom and click **Create table**.
 
-![alt text](/images/4/4.3/image2.png)
+![alt text](/Workshop/images/4/4.3/image2.png)
 
 **Step 4: Initialization Status Testing (Metric/Log Checkpoint)**
 The AWS system will take a few dozen seconds to provision resources.

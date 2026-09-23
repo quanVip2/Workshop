@@ -11,14 +11,14 @@ Even though "Block Public Access" has been turned off, AWS S3 still defaults to 
 
 1. Switch to the **Permissions** tab.
 
-![alt text](/images/4/4.8/image5.png)
+![alt text](/Workshop/images/4/4.8/image5.png)
 
 2. Scroll down to the **Bucket policy** section and click **Edit**.
 
 3. Paste the JSON snippet for public read permissions into the editor.
 
-![alt text](/images/4/4.8/image6.png)
+![alt text](/Workshop/images/4/4.8/image6.png)
 
 4. Click **Save changes**.
 
-![alt text](/images/4/4.8/image7.png)
+![alt text](/Workshop/images/4/4.8/image7.png)

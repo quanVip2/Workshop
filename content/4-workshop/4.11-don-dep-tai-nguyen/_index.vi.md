@@ -21,39 +21,39 @@ Trong môi trường điện toán đám mây, các dịch vụ lưu trữ (như
 1. Truy cập dịch vụ S3, đánh dấu tích chọn kho `kho-anh-goc-cua-toi-1`.
 2. Nhấn nút **Empty** ở menu trên cùng, gõ chữ `permanently delete` để xác nhận xóa toàn bộ ảnh gốc bên trong.
 
-![alt text](/images/4/4.11/image1.png)
+![alt text](/Workshop/images/4/4.11/image1.png)
 
 3. Trở lại danh sách, tiếp tục chọn kho `kho-anh-goc-cua-toi-1` và nhấn nút **Delete**, gõ tên kho để xác nhận xóa vĩnh viễn cái vỏ kho.
-![alt text](/images/4/4.11/image2.png)
+![alt text](/Workshop/images/4/4.11/image2.png)
 4. Lặp lại thao tác Empty và Delete tương tự cho 2 kho còn lại: `kho-anh-nho-cua-toi-1` (Kho Output) và `trang-web-xu-ly-anh-cua-toi` (Kho Website tĩnh).
-![alt text](/images/4/4.11/image3.png)
+![alt text](/Workshop/images/4/4.11/image3.png)
 
 ### Bước 2: Xóa bảng cơ sở dữ liệu Amazon DynamoDB
 1. Truy cập dịch vụ DynamoDB, chọn **Tables** ở menu bên trái.
 2. Đánh dấu tích vào bảng `ThongTinAnh`.
 3. Nhấn nút **Delete**, gõ chữ `confirm` để xác nhận xóa toàn bộ dữ liệu lịch sử metadata.
-![alt text](/images/4/4.11/image4.png)
+![alt text](/Workshop/images/4/4.11/image4.png)
 
 ### Bước 3: Xóa hàm xử lý AWS Lambda
 1. Truy cập dịch vụ Lambda, chọn tab **Functions**.
 2. Đánh dấu tích vào hàm `HamXuLyAnh12`
 3. Nhấn **Actions** $\rightarrow$ Chọn **Delete**, gõ chữ `delete` để xác nhận xóa mã nguồn Python.
-![alt text](/images/4/4.11/image5.png)
-![alt text](/images/4/4.11/image6.png)
+![alt text](/Workshop/images/4/4.11/image5.png)
+![alt text](/Workshop/images/4/4.11/image6.png)
 ### Bước 4: Xóa nhật ký Amazon CloudWatch Logs
 1. Truy cập dịch vụ CloudWatch, tìm mục **Logs** $\rightarrow$ **Log Management** ở menu bên trái.
 2. Tìm và tích chọn nhóm log có tên `/aws/lambda/HamXuLyAnh12` (hoặc tương ứng).
 3. Nhấn **Actions** $\rightarrow$ **Delete log group** và xác nhận.
 
-![alt text](/images/4/4.11/image7.png)
+![alt text](/Workshop/images/4/4.11/image7.png)
 
 ### Bước 5: Xóa danh tính bảo mật AWS IAM
 1. Truy cập dịch vụ IAM, vào mục **Roles**.
 2. Tìm "Thẻ nhân viên" `RoleChoLambda`, đánh dấu tích và nhấn **Delete**.
-![alt text](/images/4/4.11/image8.png)
+![alt text](/Workshop/images/4/4.11/image8.png)
 3. Chuyển sang mục **Users**, chọn tài khoản IAM User mà bạn đã tạo ở Chương 2, tiến hành vô hiệu hóa (**Deactivate**) phần Access Key, xóa Key và sau đó xóa luôn IAM User này.
 
-![alt text](/images/4/4.11/image9.png)
+![alt text](/Workshop/images/4/4.11/image9.png)
 
 ## Kết quả mong đợi
 * Toàn bộ ảnh gốc, ảnh nén, lịch sử cơ sở dữ liệu và mã nguồn web tĩnh đã được gỡ bỏ hoàn toàn khỏi hệ thống.
