@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Enable Public Access (Bucket Policy) on AWS Workshop</title>
+		<link>http://localhost:1313/Workshop/4-workshop/4.8-cau-hinh-ten-mien/4.8.2-bat-tinh-nang-web-server/</link>
+		<description>Recent content in Enable Public Access (Bucket Policy) on AWS Workshop</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="http://localhost:1313/Workshop/4-workshop/4.8-cau-hinh-ten-mien/4.8.2-bat-tinh-nang-web-server/index.xml" rel="self" type="application/rss+xml" />
+	</channel>
+</rss>

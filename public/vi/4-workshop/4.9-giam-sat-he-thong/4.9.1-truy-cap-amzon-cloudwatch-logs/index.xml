@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Truy cập Amazon CloudWatch Logs on AWS Workshop</title>
+		<link>http://localhost:1313/Workshop/vi/4-workshop/4.9-giam-sat-he-thong/4.9.1-truy-cap-amzon-cloudwatch-logs/</link>
+		<description>Recent content in Truy cập Amazon CloudWatch Logs on AWS Workshop</description>
+		<generator>Hugo</generator>
+		<language>vi</language>
+		
+		
+		
+		
+			<atom:link href="http://localhost:1313/Workshop/vi/4-workshop/4.9-giam-sat-he-thong/4.9.1-truy-cap-amzon-cloudwatch-logs/index.xml" rel="self" type="application/rss+xml" />
+	</channel>
+</rss>

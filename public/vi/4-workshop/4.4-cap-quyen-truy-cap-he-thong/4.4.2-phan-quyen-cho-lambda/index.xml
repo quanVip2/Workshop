@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Phân quyền cho Lambda on AWS Workshop</title>
+		<link>//localhost:1313/vi/4-workshop/4.4-cap-quyen-truy-cap-he-thong/4.4.2-phan-quyen-cho-lambda/</link>
+		<description>Recent content in Phân quyền cho Lambda on AWS Workshop</description>
+		<generator>Hugo</generator>
+		<language>vi</language>
+		
+		
+		
+		
+			<atom:link href="//localhost:1313/vi/4-workshop/4.4-cap-quyen-truy-cap-he-thong/4.4.2-phan-quyen-cho-lambda/index.xml" rel="self" type="application/rss+xml" />
+	</channel>
+</rss>
