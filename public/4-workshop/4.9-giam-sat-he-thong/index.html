@@ -12,24 +12,24 @@
 
     <link rel="icon" href="/Workshop/images/favicon.png" type="image/png">
 
-    <title>Giám sát hệ thống (Kiểm tra CloudWatch Logs và đo lường hiệu suất) :: AWS Workshop</title>
+    <title>System Monitoring (Checking CloudWatch Logs and Performance Measurement) :: AWS Workshop</title>
 
     
-    <link href="/Workshop/css/nucleus.css?1790169817" rel="stylesheet">
-    <link href="/Workshop/css/fontawesome-all.min.css?1790169817" rel="stylesheet">
-    <link href="/Workshop/css/hybrid.css?1790169817" rel="stylesheet">
-    <link href="/Workshop/css/featherlight.min.css?1790169817" rel="stylesheet">
-    <link href="/Workshop/css/perfect-scrollbar.min.css?1790169817" rel="stylesheet">
-    <link href="/Workshop/css/auto-complete.css?1790169817" rel="stylesheet">
-    <link href="/Workshop/css/atom-one-dark-reasonable.css?1790169817" rel="stylesheet">
-    <link href="/Workshop/css/theme.css?1790169817" rel="stylesheet">
-    <link href="/Workshop/css/hugo-theme.css?1790169817" rel="stylesheet">
+    <link href="/Workshop/css/nucleus.css?1790170786" rel="stylesheet">
+    <link href="/Workshop/css/fontawesome-all.min.css?1790170786" rel="stylesheet">
+    <link href="/Workshop/css/hybrid.css?1790170786" rel="stylesheet">
+    <link href="/Workshop/css/featherlight.min.css?1790170786" rel="stylesheet">
+    <link href="/Workshop/css/perfect-scrollbar.min.css?1790170786" rel="stylesheet">
+    <link href="/Workshop/css/auto-complete.css?1790170786" rel="stylesheet">
+    <link href="/Workshop/css/atom-one-dark-reasonable.css?1790170786" rel="stylesheet">
+    <link href="/Workshop/css/theme.css?1790170786" rel="stylesheet">
+    <link href="/Workshop/css/hugo-theme.css?1790170786" rel="stylesheet">
     
-    <link href="/Workshop/css/theme-workshop.css?1790169817" rel="stylesheet">
+    <link href="/Workshop/css/theme-workshop.css?1790170786" rel="stylesheet">
     
     
 
-    <script src="/Workshop/js/jquery-3.3.1.min.js?1790169817"></script>
+    <script src="/Workshop/js/jquery-3.3.1.min.js?1790170786"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -58,8 +58,8 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/Workshop/js/lunr.min.js?1790169817"></script>
-<script type="text/javascript" src="/Workshop/js/auto-complete.js?1790169817"></script>
+<script type="text/javascript" src="/Workshop/js/lunr.min.js?1790170786"></script>
+<script type="text/javascript" src="/Workshop/js/auto-complete.js?1790170786"></script>
 
 
     
@@ -67,7 +67,7 @@
 <script type="text/javascript">
     var baseurl = "http:\/\/localhost:1313\/Workshop\/\/";
 </script>
-<script type="text/javascript" src="/Workshop/js/search.js?1790169817"></script> 
+<script type="text/javascript" src="/Workshop/js/search.js?1790170786"></script> 
   </div>
 
   <div class="highlightable">
@@ -730,7 +730,7 @@
             
 <li
   data-nav-id="/Workshop/4-workshop/4.9-giam-sat-he-thong/"
-  title="Giám sát hệ thống (Kiểm tra CloudWatch Logs và đo lường hiệu suất)"
+  title="System Monitoring (Checking CloudWatch Logs and Performance Measurement)"
   class="dd-item 
         
         active
@@ -738,7 +738,7 @@
         "
 >
   <a href="/Workshop/4-workshop/4.9-giam-sat-he-thong/">
-     <b> 4.9 </b> Giám sát hệ thống (Kiểm tra CloudWatch Logs và đo lường hiệu suất) 
+     <b> 4.9 </b> System Monitoring (Checking CloudWatch Logs and Performance Measurement) 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -1004,7 +1004,7 @@
             
           
           
-            <a href='/Workshop/'>Internship Report</a> > <a href='/Workshop/4-workshop/'>Workshop</a> > Giám sát hệ thống (Kiểm tra CloudWatch Logs và đo lường hiệu suất)
+            <a href='/Workshop/'>Internship Report</a> > <a href='/Workshop/4-workshop/'>Workshop</a> > System Monitoring (Checking CloudWatch Logs and Performance Measurement)
           
         
           
@@ -1019,10 +1019,10 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#mục-tiêu">Mục tiêu</a></li>
-    <li><a href="#tổng-quan">Tổng quan</a></li>
-    <li><a href="#nội-dung-thực-hành">Nội dung thực hành</a></li>
-    <li><a href="#kết-quả-mong-đợi">Kết quả mong đợi</a></li>
+    <li><a href="#objectives">Objectives</a></li>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#practice-content">Practice Content</a></li>
+    <li><a href="#expected-outcomes">Expected Outcomes</a></li>
   </ul>
 </nav>
     </div>
@@ -1040,7 +1040,7 @@
           
             <h1>
               
-              Giám sát hệ thống (Kiểm tra CloudWatch Logs và đo lường hiệu suất)
+              System Monitoring (Checking CloudWatch Logs and Performance Measurement)
             </h1>
           
 
@@ -1048,22 +1048,22 @@
 
 
 
-	<h2 id="mục-tiêu">Mục tiêu</h2>
-<p>Theo dõi quá trình hoạt động ngầm của hệ thống xử lý ảnh, đo lường thời gian thực thi thực tế (Duration), lượng RAM tiêu thụ (Max Memory Used) và phân tích lỗi (nếu có) thông qua dịch vụ Amazon CloudWatch.</p>
-<h2 id="tổng-quan">Tổng quan</h2>
-<p>Trong kiến trúc Serverless (phi máy chủ), bạn không có quyền truy cập vào hệ điều hành bên dưới để xem màn hình console hay file log truyền thống. Do đó, Amazon CloudWatch là &ldquo;con mắt&rdquo; duy nhất và mạnh mẽ nhất để giám sát hệ thống.</p>
-<p>Nhờ việc chúng ta đã gắn quyền <code>AWSLambdaBasicExecutionRole</code> ở Chương 5.4, mỗi khi hàm AWS Lambda chạy, nó sẽ tự động đẩy toàn bộ nội dung lệnh <code>print()</code> và các thông số đo lường (Metrics) lên CloudWatch. Việc đọc hiểu các thông số này giúp chúng ta đánh giá xem cấu hình 512MB RAM và 15 giây Timeout đã thực sự tối ưu hay chưa, từ đó đáp ứng tiêu chí Kiểm thử và Đo lường của dự án.</p>
-<h2 id="nội-dung-thực-hành">Nội dung thực hành</h2>
-<p>Phần thực hành này bao gồm hai quy trình chính:</p>
+	<h2 id="objectives">Objectives</h2>
+<p>Monitor the background operations of the image processing system, measure actual execution time (<code>Duration</code>), memory consumption (<code>Max Memory Used</code>), and analyze errors (if any) via the Amazon CloudWatch service.</p>
+<h2 id="overview">Overview</h2>
+<p>In a Serverless architecture, you do not have direct access to the underlying operating system to view console screens or traditional log files. Therefore, Amazon CloudWatch acts as the single most powerful &ldquo;eye&rdquo; for monitoring the system.</p>
+<p>Thanks to attaching the <code>AWSLambdaBasicExecutionRole</code> permission in Chapter 5.4, every time the AWS Lambda function runs, it automatically pushes all <code>print()</code> statement outputs and measurement metrics to CloudWatch. Understanding these metrics helps us evaluate whether the 512MB RAM and 15-second Timeout configuration is truly optimal, thereby meeting the project&rsquo;s testing and measurement criteria.</p>
+<h2 id="practice-content">Practice Content</h2>
+<p>This practice section includes two main procedures:</p>
 <ul>
-<li>Điều hướng từ giao diện hàm AWS Lambda sang Amazon CloudWatch Log Groups.</li>
-<li>Đọc luồng dữ liệu nhật ký (Log stream) để phân tích các chỉ số <code>REPORT</code> về bộ nhớ và thời gian.</li>
+<li>Navigate from the AWS Lambda function interface to Amazon CloudWatch Log Groups.</li>
+<li>Read the log stream data to analyze the <code>REPORT</code> metrics regarding memory and time.</li>
 </ul>
-<h2 id="kết-quả-mong-đợi">Kết quả mong đợi</h2>
+<h2 id="expected-outcomes">Expected Outcomes</h2>
 <ul>
-<li>Biết cách truy xuất nhật ký hoạt động của bất kỳ hàm Lambda nào.</li>
-<li>Đọc hiểu được các thông số cốt lõi trong dòng <code>REPORT</code> của CloudWatch.</li>
-<li>Xác nhận được việc nén ảnh bằng Pillow tiêu thụ bao nhiêu RAM thực tế, từ đó chứng minh quyết định nâng cấp RAM từ 128MB lên 512MB là hoàn toàn có cơ sở kỹ thuật.</li>
+<li>Know how to retrieve the activity logs of any Lambda function.</li>
+<li>Understand the core parameters within the CloudWatch <code>REPORT</code> line.</li>
+<li>Confirm how much actual RAM image compression using Pillow consumes, thereby proving that the decision to upgrade RAM from 128MB to 512MB has solid technical grounds.</li>
 </ul>
 
 
@@ -1823,19 +1823,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/Workshop/js/clipboard.min.js?1790169817"></script>
-    <script src="/Workshop/js/perfect-scrollbar.min.js?1790169817"></script>
-    <script src="/Workshop/js/perfect-scrollbar.jquery.min.js?1790169817"></script>
-    <script src="/Workshop/js/jquery.sticky.js?1790169817"></script>
-    <script src="/Workshop/js/featherlight.min.js?1790169817"></script>
-    <script src="/Workshop/js/highlight.pack.js?1790169817"></script>
+    <script src="/Workshop/js/clipboard.min.js?1790170786"></script>
+    <script src="/Workshop/js/perfect-scrollbar.min.js?1790170786"></script>
+    <script src="/Workshop/js/perfect-scrollbar.jquery.min.js?1790170786"></script>
+    <script src="/Workshop/js/jquery.sticky.js?1790170786"></script>
+    <script src="/Workshop/js/featherlight.min.js?1790170786"></script>
+    <script src="/Workshop/js/highlight.pack.js?1790170786"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/Workshop/js/modernizr.custom-3.6.0.js?1790169817"></script>
-    <script src="/Workshop/js/learn.js?1790169817"></script>
-    <script src="/Workshop/js/hugo-learn.js?1790169817"></script>
+    <script src="/Workshop/js/modernizr.custom-3.6.0.js?1790170786"></script>
+    <script src="/Workshop/js/learn.js?1790170786"></script>
+    <script src="/Workshop/js/hugo-learn.js?1790170786"></script>
 
-    <link href="/Workshop/mermaid/mermaid.css?1790169817" rel="stylesheet" />
-    <script src="/Workshop/mermaid/mermaid.js?1790169817"></script>
+    <link href="/Workshop/mermaid/mermaid.css?1790170786" rel="stylesheet" />
+    <script src="/Workshop/mermaid/mermaid.js?1790170786"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
