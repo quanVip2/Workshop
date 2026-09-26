@@ -1,5 +1,5 @@
 ---
-title: "Project Proposal"
+title: "Proposal"
 weight: 2
 pre: " <b> 2. </b> "
 ---
@@ -9,7 +9,7 @@ pre: " <b> 2. </b> "
 ## 1. General Information
 
 * **Project Title:** Serverless Image Thumbnail Generation System on AWS.
-* **Author:** Đoàn Vũ Ngọc Ánh
+* **Author:** Nguyen Hong Quan
 * **Context:** In modern web applications, optimizing uploaded images is mandatory to reduce bandwidth and enhance user experience. This project builds a fully automated solution utilizing an event-driven model on the AWS cloud platform.
 
 ## 2. Problem Statement & Objectives
