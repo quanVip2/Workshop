@@ -22,7 +22,7 @@ When a browser accesses the website, it automatically generates a hidden identif
 ## Detailed Testing Steps
 
 ### Step 1: Experience on the First Device (e.g., Google Chrome)
-1. Open the S3 Static Website link using the Google Chrome browser:http://trang-web-xu-ly-anh-cua-toi.s3-website-us-east-1.amazonaws.com/
+1. Open the S3 Static Website link using the Google Chrome browser<http://trang-web-xu-ly-anh-cua-toi.s3-website-us-east-1.amazonaws.com/>
 
 ![alt text](/Workshop/images/4/4.10/image1.png)
 

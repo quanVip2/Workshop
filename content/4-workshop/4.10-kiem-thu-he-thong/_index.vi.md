@@ -22,7 +22,7 @@ Khi một trình duyệt truy cập Web, nó tự động sinh ra một mã số
 ## Các bước kiểm thử chi tiết
 
 ### Bước 1: Trải nghiệm trên thiết bị thứ nhất (Ví dụ: Google Chrome)
-1. Mở đường link Static Website S3 bằng trình duyệt Google Chrome.:http://trang-web-xu-ly-anh-cua-toi.s3-website-us-east-1.amazonaws.com/
+1. Mở đường link Static Website S3 bằng trình duyệt Google Chrome.<http://trang-web-xu-ly-anh-cua-toi.s3-website-us-east-1.amazonaws.com/>
 
 ![alt text](/Workshop/images/4/4.10/image1.png)
 
