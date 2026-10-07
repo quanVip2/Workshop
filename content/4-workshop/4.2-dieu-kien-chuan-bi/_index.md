@@ -5,41 +5,47 @@ pre: " <b> 4.2 </b> "
 ---
 
 ## Objectives
-Ensure readers can access the AWS Management Console, set up an IAM account with appropriate security permissions to obtain Access Keys, and have the Web interface source code ready before starting to deploy core services.
+Ensure you have proper access to the AWS Management Console, set up the correct deployment region, and prepare your local code editing environment before building core services.
 
 ## 1. Required Tools
-Unlike traditional applications, this project applies a 100% Serverless architecture, so it does not require installing server software, Node.js, or Docker on your personal machine. All infrastructure configurations are performed directly on the AWS Management Console.
+This project applies a 100% Serverless architecture combined with a static frontend, so you are not required to install virtual server software, Node.js, or Docker on your personal computer. All backend infrastructure configurations are performed directly on the AWS Management Console.
 
 You only need to prepare:
 
-* **AWS Account:** Has access to the AWS Management Console.
-* **Web Browser:** Google Chrome, Coc Coc, or Microsoft Edge are recommended for running and testing the interface.
-* **Code Editor:** Visual Studio Code (or Notepad++) used to edit parameters in the source code.
-* **Project Source Code:** The `index.html` file containing the static Web interface framework and AWS SDK connection logic (available in the appendix).
+* **AWS Account:** With access to the AWS Management Console (using an AWS Learner Lab account or personal account).
+* **Web Browser:** Recommended to use Google Chrome, Cốc Cốc, or Microsoft Edge to run and test the API communication interface.
+* **Code Editor:** Visual Studio Code (or Sublime Text, Notepad++) used to program the HTML/JS interface and configure Python functions.
+* **Local Environment:** An empty folder on your computer to hold the project's frontend source code.
 
 ## 2. Implementation Steps
 
-**Step 1: Log in to the AWS Console and check the Region**
-1. Log in to the AWS Management Console.
-2. **Checkpoint:** Look at the top right corner of the screen to ensure the selected Region is **us-east-1 (N. Virginia)**. All storage and compute resources for this workshop will be centralized in this region to optimize speed and avoid cross-region errors.
+**Step 1: Log in to the AWS Console and Check the Region**
+1. Log in to the AWS Management Console with your account.
+2. **Checkpoint:** Observe the top right corner of the screen, ensuring the selected region is **US East (N. Virginia) `us-east-1`**. 
+*Reason:* Consolidating all storage resources (S3), compute (Lambda), authentication (Cognito), and AI (Rekognition) in a single region optimizes connection speed, avoids latency, and completely eliminates cross-region service conflict errors.
+![Displayed Region](/Workshop/images/4/4.2/2.1.png)
 
-**Step 2: Create access keys (IAM Access Key) for the Web application**
-For the Web interface (running on the user's browser) to securely connect to the S3 bucket and DynamoDB database, we need to provide it with a set of identification keys.
+**Step 2: Prepare the Workspace**
+1. Create a new folder on your computer named `Enterprise_Image_Processor`.
+2. Open this folder using Visual Studio Code.
+3. Create an empty file named `index.html`. This file will serve as the place where we program the entire web interface, Cognito login form, and dashboard in subsequent steps.
 
-1. From the AWS Console search bar, access the **IAM (Identity and Access Management)** service.
-2. Navigate to the **Users** section and select the user you want to grant permissions to, which is `WebUser`.
-3. Switch to the **Security credentials** tab.
-4. Scroll down to the **Access keys** section and click the **Create access key** button.
-5. Download the CSV file or carefully copy the 2 strings: `Access key ID` and `Secret access key`.
-![Create Access Key](/Workshop/images/4/image2.png)
+![Visual Code Screen](/Workshop/images/4/4.2/2.2.png)
 
-**Step 3: Integrate the security keys into the source code**
-1. Open the `index.html` file using Visual Studio Code.
-2. Locate the AWS SDK configuration code block (in the `<script>` section) and enter the 2 Key values obtained in Step 2 into the correct positions.
-![Configuration](/Workshop/images/4/image3.png)
-3. **Checkpoint:** Successfully save the `index.html` file. At this point, the source code is ready to connect to the cloud infrastructure.
+---
 
-## 3. Expected Outcomes
-* Successfully log in to the AWS Management Console in the `us-east-1` region.
-* Successfully create and securely store the identification access keys (Access Key ID & Secret Access Key) from the IAM service.
-* The project source code (`index.html`) has been successfully updated with the security keys, ready for the resource deployment steps in the next chapter.
+### ⚠️ Critical Security Note (Security Paradigm Shift)
+If you have previously worked on basic labs, you were often instructed to create an *IAM Access Key* and hardcode it directly into the HTML/JS source code to connect with the AWS SDK. **THIS IS A SEVERE SECURITY VULNERABILITY** in a real-world environment, as anyone inspecting the webpage source code (F12) can steal the key and take control of your AWS account.
+
+In this Enterprise-grade workshop, we **ABSOLUTELY DO NOT** use static access keys on the frontend. 
+Instead, our system utilizes a multi-layered security architecture:
+* Users log in via **Amazon Cognito** to obtain a **JWT Token** (valid for only 1 hour).
+* This token is sent to **Amazon API Gateway** for authentication.
+* Once validated, the backend AWS Lambda issues a **Presigned URL** (a temporary signed link active for 5 minutes) so the web browser can safely upload/download images to/from S3 without knowing any system passwords.
+
+---
+
+## 3. Expected Results
+* You have successfully logged into the AWS Management Console in the `us-east-1` region.
+* You have successfully initialized the project folder and `index.html` file on your personal computer.
+* You grasp the new security mindset: Do not use and do not embed IAM Access Keys into the frontend interface.

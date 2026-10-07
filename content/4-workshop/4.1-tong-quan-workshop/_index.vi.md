@@ -5,63 +5,74 @@ pre: " <b> 4.1 </b> "
 ---
 
 ## Mục tiêu
-Workshop này hướng dẫn triển khai ứng dụng Hệ thống Xử lý Ảnh Tự động (Thumbnail Generator) trên nền tảng AWS bằng cách sử dụng kiến trúc phi máy chủ (Serverless), các dịch vụ được quản lý (Managed Services), và luồng xử lý theo sự kiện (Event-driven Architecture). Sau khi hoàn thành workshop, bạn sẽ có thể triển khai một ứng dụng web xử lý đồ họa hoàn chỉnh với khả năng tự động mở rộng, tối ưu chi phí (Zero-cost lúc nhàn rỗi) và quản lý không gian làm việc độc lập cho nhiều người dùng.
+Workshop này hướng dẫn triển khai ứng dụng **Hệ thống Xử lý Ảnh Tự động tích hợp AI (Enterprise Serverless Image Processor)** trên nền tảng đám mây AWS. 
+
+Bằng cách kết hợp kiến trúc phi máy chủ (Serverless), các dịch vụ được quản lý (Managed Services), phân tích Machine Learning và mô hình hướng sự kiện (Event-driven Architecture), workshop sẽ giúp bạn xây dựng một giải pháp hoàn chỉnh (End-to-End). Sau khi hoàn thành, bạn sẽ sở hữu một hệ thống web có khả năng tự động mở rộng, tối ưu chi phí, nhận diện hình ảnh thông minh bằng Trí tuệ nhân tạo, và bảo mật định danh đa người dùng ở cấp độ doanh nghiệp.
 
 ## 1. Giới thiệu bài toán và giải pháp
-Hệ thống Xử lý Ảnh Tự động là một ứng dụng web mô phỏng lại luồng làm việc ngầm (Background Job) của các nền tảng lớn (như Facebook, Shopee), nơi người dùng tải ảnh gốc lên và hệ thống tự động tạo ra một phiên bản thu nhỏ để tối ưu hóa tốc độ tải trang. Hệ thống hỗ trợ các chức năng như tải lên hình ảnh, tự động nén kích thước (sử dụng thư viện Pillow), quản lý lịch sử xử lý, tải/xem ảnh đã nén và cấp phát không gian dữ liệu độc lập cho từng thiết bị.
+Trong các hệ thống phần mềm hiện đại (như CMS, Thương mại điện tử), việc quản lý và tối ưu hóa tài sản kỹ thuật số là yêu cầu bắt buộc. Tuy nhiên, việc tự xây dựng máy chủ (EC2) để xử lý ảnh không chỉ lãng phí tài nguyên lúc nhàn rỗi mà còn tiềm ẩn rủi ro bảo mật dữ liệu.
 
-Thay vì triển khai ứng dụng trên một máy chủ truyền thống (EC2) hoạt động 24/7 gây lãng phí tài nguyên, workshop này áp dụng kiến trúc Serverless trên AWS. Giao diện tĩnh của ứng dụng được lưu trữ và phân phối bởi Amazon S3 (Static Website Hosting). Hình ảnh gốc và hình ảnh thu nhỏ cũng được lưu trữ an toàn trong các kho Amazon S3 độc lập.
+Workshop này giải quyết bài toán trên bằng cách ứng dụng toàn diện hệ sinh thái AWS Serverless. Giao diện người dùng được lưu trữ trên Amazon S3 tĩnh hoặc Netlify. Dữ liệu định danh được quản lý chặt chẽ bởi **Amazon Cognito**, kết hợp cùng **Amazon API Gateway** để tạo thành một lớp lá chắn bảo vệ API vững chắc (API Protection).
 
-Quy trình nén ảnh được thực thi bởi hàm AWS Lambda (Python 3.12) kết hợp với Lambda Layer (Klayers) để nạp thư viện đồ họa Pillow, đảm bảo khả năng tính toán mạnh mẽ mà không cần quản lý máy chủ. Mọi dữ liệu về lịch sử xử lý (Metadata) được ghi chép tự động vào cơ sở dữ liệu NoSQL Amazon DynamoDB. Hệ thống được giám sát thông qua Amazon CloudWatch và quản lý quyền hạn truy cập nghiêm ngặt bằng AWS IAM.
+Trái tim của hệ thống là cụm 4 hàm vi dịch vụ (Microservices) chạy trên **AWS Lambda** (Python 3.12). Khi có sự kiện ảnh được tải lên, Lambda sử dụng thư viện đồ họa Pillow để chuẩn hóa ảnh sang JPEG siêu nhẹ, đồng thời gọi dịch vụ **Amazon Rekognition** để dùng AI trích xuất các nhãn dán nội dung (AI Tags). Toàn bộ dữ liệu, bao gồm cả các chỉ số đo lường dung lượng gốc và dung lượng nén, được lưu vào cơ sở dữ liệu NoSQL **Amazon DynamoDB** để xuất ra Bảng thống kê (Dashboard) phân tích hiệu quả cho từng người dùng riêng biệt.
 
 ## 2. Kiến trúc hệ thống
-Kiến trúc của hệ thống bao gồm các thành phần chính sau:
+Kiến trúc của hệ thống bao gồm các lớp thành phần chính sau:
 
-* Người dùng (Client Browser)
-* Web Hosting tĩnh (Trình diễn giao diện)
-* Dịch vụ lưu trữ Object (Input & Output)
-* Dịch vụ tính toán phi máy chủ (Serverless Compute)
-* Cơ sở dữ liệu NoSQL (Ghi chú lịch sử)
-* Quản lý danh tính và quyền hạn
-* Giám sát hệ thống
+* **Lớp Trình diễn (Presentation Layer):** Giao diện Web Frontend.
+* **Lớp Xác thực & Bảo mật (Security Layer):** Quản lý người dùng, cấp Token và kiểm soát truy cập API.
+* **Lớp Giao tiếp (API Layer):** Cổng REST API định tuyến request.
+* **Lớp Tính toán phi máy chủ (Compute Layer):** Cụm 4 hàm Lambda (Upload, Download, History, Xử lý ảnh).
+* **Lớp Trí tuệ nhân tạo (AI Layer):** Phân tích hình ảnh bằng Machine Learning.
+* **Lớp Lưu trữ (Storage & Database Layer):** Lưu trữ File tĩnh và dữ liệu Metadata.
+* **Lớp Giám sát (Monitoring):** Quản trị log và hiệu suất.
 
-![Hình 1 – Kiến trúc hệ thống Xử lý ảnh tự động](/Workshop/images/sodo.jpg)
+![Hình 1 – Kiến trúc hệ thống Xử lý ảnh tự động tích hợp AI](/Workshop/images/so_do.png)
+*(Lưu ý: Hình ảnh sử dụng là sơ đồ so_do.png kiến trúc V2 bạn vừa tạo)*
 
 ## 3. Quy trình hoạt động của hệ thống
-Luồng xử lý chính của hệ thống diễn ra theo các bước sau:
+Luồng xử lý chính của hệ thống diễn ra theo 10 bước khép kín và bảo mật:
 
-1. Người dùng truy cập website thông qua đường dẫn được cung cấp bởi tính năng S3 Static Website Hosting.
-2. Trình duyệt web sinh ra một mã định danh ngầm (Device ID) bằng LocalStorage, tự động gắn mã này vào tiền tố của bức ảnh và đẩy trực tiếp lên kho Amazon S3 (Input Bucket) thông qua AWS SDK.
-3. Sự kiện `s3:ObjectCreated` từ Input Bucket ngay lập tức kích hoạt (trigger) hàm AWS Lambda.
-4. Hàm AWS Lambda (được cấp RAM 512MB và Timeout 15s) tải ảnh gốc vào bộ nhớ, sử dụng thư viện Pillow (từ Lambda Layer) để giảm độ phân giải, ép chất lượng xuống 50% và chuyển đổi sang định dạng JPEG.
-5. AWS Lambda đẩy bức ảnh đã nén siêu nhẹ sang kho Amazon S3 (Output Bucket).
-6. Đồng thời, AWS Lambda ghi nhận thông tin (Tên file, kích thước mới, thời gian xử lý) vào cơ sở dữ liệu Amazon DynamoDB.
-7. Trình duyệt web của người dùng liên tục lắng nghe, lấy ảnh thu nhỏ từ S3 Output (thông qua Pre-signed URL) để hiển thị.
-8. Trình duyệt gọi API truy vấn Amazon DynamoDB, sử dụng logic bộ lọc (Filter) để chỉ lấy và hiển thị lịch sử xử lý hình ảnh thuộc về đúng thiết bị của người dùng đó.
-9. Nhật ký hoạt động (Logs) và các lỗi thực thi của hàm Lambda (nếu có) được gửi đến Amazon CloudWatch để phục vụ việc giám sát và khắc phục sự cố (Troubleshooting).
+1. Người dùng truy cập website thông qua Frontend tĩnh.
+2. Người dùng Đăng ký/Đăng nhập qua **Amazon Cognito**. Nếu thành công, Cognito cấp một **JWT Token** hợp lệ.
+3. Trình duyệt gửi Request đính kèm JWT Token lên **Amazon API Gateway**. API Gateway kiểm tra tính hợp lệ của Token trước khi cho phép đi tiếp.
+4. Hệ thống gọi hàm Lambda `GenerateUploadUrl` để xin cấp quyền. Lambda trả về một chữ ký bảo mật (**Presigned URL**). Trình duyệt dùng URL này đẩy ảnh trực tiếp lên S3 Input Bucket.
+5. Sự kiện `s3:ObjectCreated` từ Input Bucket ngay lập tức kích hoạt (Trigger) hàm Lambda lõi `HamXuLyAnh`.
+6. Hàm Lambda xử lý đồ họa: Tự động đổi định dạng mọi loại ảnh về chuẩn `.jpg`, thu nhỏ và nén kích thước.
+7. Hàm Lambda gửi ảnh vừa nén qua **Amazon Rekognition** để AI phân tích và trích xuất các từ khóa (Tags).
+8. Lambda lưu ảnh thành phẩm sang S3 Output Bucket; đồng thời ghi toàn bộ thông tin (Email sở hữu, Dung lượng gốc, Dung lượng nén, Nhãn dán AI) vào **Amazon DynamoDB**.
+9. Trình duyệt người dùng gọi hàm Lambda `GetUserHistory` thông qua API Gateway để lấy dữ liệu. Hàm này chỉ truy vấn DynamoDB các bản ghi khớp với Email của người dùng hiện tại, tính toán tỷ lệ tiết kiệm dung lượng và đổ ra Bảng Dashboard thống kê.
+10. Khi người dùng bấm "Xem", API Gateway tiếp tục gọi hàm Lambda `GenerateDownloadUrl` để cấp thêm một Presigned URL tạm thời, giúp người dùng tải/xem bức ảnh từ S3 Output một cách an toàn tuyệt đối.
 
-## 4. Các dịch vụ được sử dụng
-Workshop sử dụng các dịch vụ AWS sau:
+**[YÊU CẦU ẢNH 1: Chụp màn hình Giao diện Web khi đăng nhập thành công hiển thị phần Upload và Bảng Dashboard Thống kê phía dưới (có số liệu hiển thị, nhãn dán AI).]**
+*Chú thích ảnh: Giao diện người dùng với tính năng Upload, Nhận diện AI và Dashboard phân tích.*
 
-* **Dịch vụ tính toán (Compute)**
+## 4. Các dịch vụ AWS được sử dụng
+Workshop ứng dụng một hệ sinh thái AWS Serverless toàn diện, bao gồm:
+
+* **Tính toán & Trí tuệ nhân tạo (Compute & Machine Learning)**
   * AWS Lambda
-  * AWS Lambda Layers
-* **Lưu trữ (Storage)**
-  * Amazon S3 (Object Storage & Static Website)
-  * Amazon DynamoDB (NoSQL Database)
-* **Bảo mật & Quản lý (Security & Management)**
+  * Amazon Rekognition
+* **Bảo mật & Phân phối API (Security & Network)**
+  * Amazon Cognito (User Pools)
+  * Amazon API Gateway
   * AWS Identity and Access Management (IAM)
+* **Lưu trữ (Storage & Database)**
+  * Amazon S3 (Object Storage & Block Public Access)
+  * Amazon DynamoDB (NoSQL Database)
 * **Giám sát (Monitoring)**
   * Amazon CloudWatch
 
 ## 5. Kết quả đạt được
-Sau khi hoàn thành workshop, bạn sẽ có thể:
+Sau khi hoàn thành workshop, bạn sẽ làm chủ các kỹ năng đám mây nâng cao:
 
-* Lập trình và cấu hình giao diện web tĩnh giao tiếp trực tiếp với AWS mà không cần máy chủ Backend (thông qua AWS SDK for JavaScript).
-* Triển khai giải pháp lưu trữ hình ảnh và website tĩnh (Static Website Hosting) trên Amazon S3.
-* Thiết kế bảng cơ sở dữ liệu phi quan hệ (NoSQL) với Amazon DynamoDB để ghi nhận Log/Metadata.
-* Tích hợp các thư viện bên thứ ba (C-compiled modules như Pillow) vào môi trường AWS Lambda thông qua tính năng Lambda Layers.
-* Xây dựng luồng tự động hóa theo sự kiện (Event-driven): dùng sự kiện thêm file của S3 để kích hoạt Lambda.
-* Cấu hình sức mạnh tính toán (Memory, Timeout) cho Lambda để xử lý các tác vụ đồ họa nặng.
-* Phân tích lỗi hệ thống và giám sát hoạt động của kiến trúc thông qua Amazon CloudWatch Logs.
-* Xóa toàn bộ tài nguyên AWS sau khi hoàn thành workshop để tránh phát sinh chi phí.
+* Tích hợp hệ thống xác thực người dùng an toàn với Amazon Cognito User Pools và quản lý phiên đăng nhập qua chuẩn JWT.
+* Bảo vệ REST API bằng cơ chế Amazon API Gateway Authorizer, ngăn chặn hoàn toàn các truy cập trái phép.
+* Xây dựng luồng giao tiếp dữ liệu an toàn bằng kỹ thuật "chữ ký tạm thời" (Presigned URLs), loại bỏ rủi ro lộ khóa Access Key tĩnh.
+* Triển khai kiến trúc vi dịch vụ (Microservices) bằng AWS Lambda để bóc tách các tác vụ: Cấp quyền Upload, Download, Lấy lịch sử và Xử lý ngầm.
+* Ứng dụng mô hình Event-driven Architecture để kích hoạt quy trình nén ảnh tự động ngay khi có file mới.
+* Tích hợp dịch vụ Machine Learning (Amazon Rekognition) vào hệ thống xử lý để tự động gán nhãn dán cho hình ảnh bằng AI.
+* Thiết kế cơ sở dữ liệu NoSQL đa người dùng (Multi-tenant) với Amazon DynamoDB, phục vụ cho việc xây dựng Bảng thống kê Analytics Dashboard trực quan.
+* Dọn dẹp và quản lý tài nguyên AWS theo thực hành tốt nhất (Best Practices) để tối ưu hóa chi phí.
+
+![Ảnh các Lambda đã tạo(trừ hàm NoteHandler là của bạn em)](/Workshop/images/4/4.1/2.1.png)
