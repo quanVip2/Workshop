@@ -21,4 +21,4 @@ pre: " <b> 4.8.2 </b> "
    * **Audience:** Dán chuỗi **Client ID** (App Client) bạn đã copy ở bài 4.3 vào đây.
 4. Nhấn **Create** để lưu lại lớp bảo vệ này.
 
- [Tạo JWT Authorizer liên kết với Amazon Cognito](/Workshop/images/4/4.8/2.2.png)
+![Tạo JWT Authorizer liên kết với Amazon Cognito](/Workshop/images/4/4.8/2.2.png)

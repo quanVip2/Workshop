@@ -13,7 +13,6 @@ API Gateway thực hiện 2 nhiệm vụ tối quan trọng:
 1. **Kiểm duyệt bảo mật:** Chặn người lạ bằng cách kiểm tra thẻ `JWT Token` thông qua Cognito Authorizer.
 2. **Định tuyến (Routing):** Phân luồng các yêu cầu (Upload, Lấy Lịch sử, Download) tới đúng hàm AWS Lambda tương ứng để xử lý.
 
-*(Lưu ý: Hàm `HamXuLyAnh` sẽ không được kết nối vào API Gateway vì nó chạy ngầm (Background Job) thông qua sự kiện S3 Trigger).*
 
 ## Nội dung thực hành
 Chúng ta sẽ chia quy trình thiết lập API Gateway thành 4 giai đoạn tương ứng với 4 bài lab nhỏ:
@@ -22,4 +21,4 @@ Chúng ta sẽ chia quy trình thiết lập API Gateway thành 4 giai đoạn t
 * **4.8.3 Thiết lập Routes & Integrations:** Tạo 3 tuyến đường kết nối với 3 hàm Lambda.
 * **4.8.4 Cấu hình CORS & Lấy URL:** Mở khóa giao tiếp trình duyệt và hoàn tất triển khai.
 
-9. [Vai trò trung tâm của Amazon API Gateway trong hệ thống](/Workshop/images/so_do.png)
+![Vai trò trung tâm của Amazon API Gateway trong hệ thống](/Workshop/images/so_do.png)

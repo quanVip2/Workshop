@@ -20,6 +20,5 @@ Trong AWS API Gateway có nhiều loại (REST API, HTTP API, WebSocket). Đối
 6. Phần **Define stages**: Giữ nguyên stage mặc định là `$default` (tự động triển khai) và nhấn **Next**.
 7. Xem lại thông tin và nhấn **Create**.
 
- [Khởi tạo HTTP API trên AWS](/Workshop/images/4/4.8/2.1.png)
+![Khởi tạo HTTP API trên AWS](/Workshop/images/4/4.8/2.1.png)
  
-*Chú thích ảnh: Khởi tạo HTTP API trên AWS.*

@@ -28,7 +28,6 @@ Kiến trúc của hệ thống bao gồm các lớp thành phần chính sau:
 * **Lớp Giám sát (Monitoring):** Quản trị log và hiệu suất.
 
 ![Hình 1 – Kiến trúc hệ thống Xử lý ảnh tự động tích hợp AI](/Workshop/images/so_do.png)
-*(Lưu ý: Hình ảnh sử dụng là sơ đồ so_do.png kiến trúc V2 bạn vừa tạo)*
 
 ## 3. Quy trình hoạt động của hệ thống
 Luồng xử lý chính của hệ thống diễn ra theo 10 bước khép kín và bảo mật:
@@ -44,8 +43,7 @@ Luồng xử lý chính của hệ thống diễn ra theo 10 bước khép kín 
 9. Trình duyệt người dùng gọi hàm Lambda `GetUserHistory` thông qua API Gateway để lấy dữ liệu. Hàm này chỉ truy vấn DynamoDB các bản ghi khớp với Email của người dùng hiện tại, tính toán tỷ lệ tiết kiệm dung lượng và đổ ra Bảng Dashboard thống kê.
 10. Khi người dùng bấm "Xem", API Gateway tiếp tục gọi hàm Lambda `GenerateDownloadUrl` để cấp thêm một Presigned URL tạm thời, giúp người dùng tải/xem bức ảnh từ S3 Output một cách an toàn tuyệt đối.
 
-**[YÊU CẦU ẢNH 1: Chụp màn hình Giao diện Web khi đăng nhập thành công hiển thị phần Upload và Bảng Dashboard Thống kê phía dưới (có số liệu hiển thị, nhãn dán AI).]**
-*Chú thích ảnh: Giao diện người dùng với tính năng Upload, Nhận diện AI và Dashboard phân tích.*
+![alt text](/Workshop/images/123.png)
 
 ## 4. Các dịch vụ AWS được sử dụng
 Workshop ứng dụng một hệ sinh thái AWS Serverless toàn diện, bao gồm:

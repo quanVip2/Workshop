@@ -29,6 +29,6 @@ Chúng ta cần tạo 3 con đường (Routes) để Frontend gọi lên, sau đ
 
 *(Tuyệt đối không kết nối hàm `HamXuLyAnh` vào đây).*
 
- [Kết nối Route với lớp bảo mật và Backend](/Workshop/images/4/4.8/2.3.png)
+![Kết nối Route với lớp bảo mật và Backend](/Workshop/images/4/4.8/2.3.png)
 
- [Kết nối Route với lớp bảo mật và Backend](/Workshop/images/4/4.8/2.4.png)
+![Kết nối Route với lớp bảo mật và Backend](/Workshop/images/4/4.8/2.4.png)

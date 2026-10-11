@@ -1,6 +1,6 @@
 ---
 title: "Cấu hình tên miền và Web Hosting (Triển khai giao diện tĩnh trên S3)"
-weight: 7
+weight: 9
 pre: " <b> 4.9 </b> "
 ---
 

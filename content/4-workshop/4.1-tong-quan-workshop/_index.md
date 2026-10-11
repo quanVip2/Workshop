@@ -28,7 +28,6 @@ The system architecture consists of the following main component layers:
 * **Monitoring Layer:** Log and performance management.
 
 ![Figure 1 – AI-Integrated Automated Image Processing System Architecture](/Workshop/images/so_do.png)
-*(Note: The image used is the V2 architecture diagram so_do.png you just created)*
 
 ## 3. System Workflow
 The main processing workflow of the system takes place in 10 closed and secure steps:
@@ -44,8 +43,8 @@ The main processing workflow of the system takes place in 10 closed and secure s
 9. The user's browser calls the `GetUserHistory` Lambda function through API Gateway to retrieve data. This function only queries DynamoDB for records matching the current user's email, calculates space-saving percentages, and renders them to the dashboard statistics table.
 10. When the user clicks "View", API Gateway continues to call the `GenerateDownloadUrl` Lambda function to issue a temporary Presigned URL, helping the user download/view the image from S3 Output with absolute security.
 
-**[IMAGE REQUEST 1: Screenshot of the Web Interface upon successful login displaying the Upload section and the Statistics Dashboard below (with displayed metrics and AI labels).]**
-*Image Caption: User interface featuring upload capabilities, AI recognition, and analytics dashboard.*
+![alt text](/Workshop/images/123.png)
+
 
 ## 4. AWS Services Used
 The workshop utilizes a comprehensive AWS Serverless ecosystem, including:

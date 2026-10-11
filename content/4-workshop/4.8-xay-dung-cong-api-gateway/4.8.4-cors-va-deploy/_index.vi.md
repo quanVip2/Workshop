@@ -18,7 +18,7 @@ Vì giao diện Web (Frontend) và API Gateway (Backend) nằm ở hai tên mi�
    * **Max-age:** Nhập `300`.
 3. Nhấn **Save** để lưu lại.
 
- [Cấu hình CORS cho phép Frontend giao tiếp API](/Workshop/images/4/4.8/2.5.png)
+![Cấu hình CORS cho phép Frontend giao tiếp API](/Workshop/images/4/4.8/2.5.png)
 
 **Bước 2: Lấy URL để cấu hình Frontend**
 1. Chọn menu **API: ImageProcessorAPI** (nhấp vào dòng chữ trên cùng bên trái để quay ra trang tổng quan API).
@@ -26,4 +26,4 @@ Vì giao diện Web (Frontend) và API Gateway (Backend) nằm ở hai tên mi�
    `https://xxxxxxxxx.execute-api.us-east-1.amazonaws.com`
 3. Hãy sao chép (Copy) đường dẫn này. Đây chính là xương sống để kết nối giao diện của bạn với toàn bộ hệ thống AWS. Bạn sẽ dùng link này gán vào biến `API_GATEWAY_URL` và `API_HISTORY_URL` trong mã nguồn Javascript ở các phần sau.
 
- [Sao chép Invoke URL để gắn vào Frontend](/Workshop/images/4/4.8/2.6.png)
+![Sao chép Invoke URL để gắn vào Frontend](/Workshop/images/4/4.8/2.6.png)
